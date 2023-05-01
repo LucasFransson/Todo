@@ -1,0 +1,203 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--white: #ffffff;
+	--gray: #cccccc;
+	--black: #222222;
+	--purple: #62516d;
+	--orange: #f77a36;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+/* Flex containers */
+.flex-row-container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+}
+
+.flex-column-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.grid-container {
+	display: grid;
+}
+/* header */
+header {
+	background-color: var(--purple);
+	height: 7%;
+}
+header > h1 {
+	color: var(--orange);
+}
+#logo {
+}
+/* left sidebar navbar */
+#left-sidebar {
+	background-color: var(--black);
+	width: 200px;
+}
+#user-profile {
+	background-color: var(--purple);
+	border-radius: 0px 20px 20px 0px;
+	width: 90%;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	margin-top: 27px;
+}
+#user-profile > h4 {
+	font-size: 22px;
+	padding: 20px;
+	color: var(--orange);
+}
+#user-picture {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+/* main content */
+#main-top {
+	background-color: var(--white);
+	height: 10%;
+}
+#quote {
+	padding-left: 10%;
+	justify-content: center;
+	align-items: center;
+}
+#quote > h4 {
+	color: var(--purple);
+	font-size: 14px;
+}
+
+#quote > p {
+	font-size: 14px;
+	color: var(--black);
+}
+#main-center {
+	background-color: var(--white);
+}
+
+/* main left */
+#main-left {
+	background-color: var(--white);
+	width: 50%;
+}
+
+#todays-todo {
+	height: 90%;
+	width: 80%;
+	margin-left: 10%;
+	background-color: var(--gray);
+	border-radius: 20px;
+	box-shadow: 0px 2px 10px 0px var(--black);
+}
+
+#todays-todo .add-todo {
+	height: 10%;
+	margin-top: 5%;
+	padding: 20px;
+}
+#todays-todo .add-todo input {
+	width: 100%;
+	padding: 5px;
+}
+
+#todays-todo .add-todo button {
+	margin-left: 2%;
+}
+
+.todo-item {
+	background-color: var(--gray);
+	height: 5%;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid var(--black);
+}
+
+.todo-item > input {
+	cursor: pointer;
+}
+.todo-item > p {
+	margin-left: 5%;
+}
+
+/* main right */
+#main-right {
+	background-color: var(--white);
+	width: 50%;
+}
+#grid-top-left {
+	display: flex;
+	height: 5rem;
+	width: 100%;
+	padding: 5px;
+
+	align-items: end;
+	justify-content: center;
+}
+#grid-top-right {
+	display: flex;
+	height: 5rem;
+	width: 100%;
+	padding: 5px;
+
+	align-items: end;
+	justify-content: center;
+}
+#todo-grid {
+	background-color: var(--white);
+	grid-template-columns: repeat(2, 25%);
+	/* height: 90%;
+	width: 80%; */
+
+	padding: 20px;
+
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	gap: 10%;
+	grid-auto-flow: row;
+}
+
+.todo-group-card {
+	background-color: var(--gray);
+	padding: 10px;
+	height: 15rem;
+	width: 100%;
+	border-radius: 20px;
+	box-shadow: 0px 1px 5px 0px var(--black);
+	display: flex;
+	justify-content: center;
+	margin-right: 10%;
+}
+
+/* Components */
+
+.button-add {
+	background-color: var(--orange);
+	color: var(--black);
+	box-shadow: 1px 1px 5px 0px gray;
+	border: transparent;
+	font-size: 24px;
+	border-radius: 100%;
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
