@@ -11,7 +11,7 @@ const CURRENT_TODO_INPUT = document.getElementById('todays-todo-input');
 // Start of Program
 
 	// ALT 2: Fetch all Todos from DB
-// let todoItems = await TodoRepository.getAllTodoItemsAsync(); // Assign value to object then Read
+// let todoItems = await TodoRepository.getAllTodoItemsAsync(); 
 
 // todoItems.forEach((item) => ElementBuilder.renderTodoItemElement(item.content,item.isCompleted, CURRENT_TODO.id) // Then Append & Display the Todos
 // );
@@ -23,7 +23,7 @@ todoItems.forEach((item) => {
 	CURRENT_TODO.appendChild(todoItemElement);
   });
 
-
+ 
 // Event Listeners & Initilization
 
 	// Create Todo Button for Current Todo Container

@@ -20,14 +20,25 @@
 		<!-- app-content -->
 		<div class="flex-row-container">
 			<!-- sidebar nav -->
-			<aside id="left-sidebar" class="flex-row-container">
+			<aside id="left-sidebar" class="flex-column-container">
 				<!-- user-profile -->
 				<div id="user-profile" class="flex-row-container">
 					<img id="user-picture" src="photos/dreadlord64.png" />
 					<h4>Lucas</h4>
-					<!-- sidebar content -->
 				</div>
+				<!-- Sidebar Navbar Content -->
+				<div id="sidebar-bottom-div" class="flex-column-container">
+					<!-- Settings btn -->
+					<button id="btn-settings">
+						<span>Settings</span>
+					</button>
+					<!-- Logout btn -->
+					<button id="btn-logout"> 
+						<span>Logout</span>
+					</button>
+				</div>	
 			</aside>
+
 			<main class="flex-column-container">
 				<div id="main-top" >
 					<div id="quote" class="flex-row-container">
@@ -65,12 +76,12 @@
 							<div id="grid-top-left">Categories wip</div>
 							<div id="grid-top-right">Settings wip</div>
 							<!-- Todo Category Card-->
-							<div class="todo-group-card">
-								<p>Personal</p>
+							<div class="todo-group-card flex-column-container">
+								<div id="group-card-title"><p>Personal</p></div>
 							</div>
-							<div class="todo-group-card"><p>Work</p></div>
-							<div class="todo-group-card"><p>Not Implemented Category: 3</p></div>
-							<div class="todo-group-card"><p>Not Implemented Category: 4</p></div>
+							<div class="todo-group-card flex-column-container"><div id="group-card-title"><p>Work</p></div></div>
+							<div class="todo-group-card flex-column-container"><div id="group-card-title"><p>NaN</p></div></div>
+							<div class="todo-group-card flex-column-container"><div id="group-card-title"><p>NaN</p></div></div>
 						</div>
 					</aside>
 				</div>
