@@ -1,24 +1,39 @@
 {
-	"todoItems": [
-		{
-			"id": "1",
-			"content": "Create a Todo App",
-			"isCompleted": "false"
-		},
-		{
-			"id": "2",
-			"content": "Learn JavaScripts Structure",
-			"isCompleted": "false"
-		},
-		{
-			"id": "3",
-			"content": "Cry",
-			"isCompleted": "false"
-		},
-		{
-			"id": "4",
-			"content": "Learn TypeScript instead",
-			"isCompleted": "false"
-		}
-	]
+  "todoItems": [
+    {
+      "id": "1",
+      "content": "Create a Todo App",
+      "isCompleted": false
+    },
+    {
+      "content": "Learn JavaScripts Structure",
+      "isCompleted": false,
+      "id": "2"
+    },
+    {
+      "content": "Cry",
+      "isCompleted": true,
+      "id": "3"
+    },
+    {
+      "content": "Learn TypeScript instead",
+      "isCompleted": false,
+      "id": "4"
+    },
+    {
+      "content": "Test POST method",
+      "isCompleted": true,
+      "id": "QJ9F-ON"
+    },
+    {
+      "content": "Implement Checkbox Logic & Deletion",
+      "isCompleted": false,
+      "id": "iyiTIOG"
+    },
+    {
+      "content": "Solve Line Decoration ",
+      "isCompleted": true,
+      "id": "yVjzTxI"
+    }
+  ]
 }

@@ -9,34 +9,51 @@ const CURRENT_TODO_INPUT = document.getElementById('todays-todo-input');
 
 
 // Start of Program
-	// ALT 1: Fetch all Todos from DB & display them( Arrow Function Syntax )
-// TodoRepository.getAllTodoItemsAsync().then((data) =>
-// 	data.forEach((item) => {
-// 		ElementBuilder.createTodo(item.content, CURRENT_TODO.id);
-// 	})
-// );
 
 	// ALT 2: Fetch all Todos from DB
-let todoItems = await TodoRepository.getAllTodoItemsAsync(); // Assign value to object then Read
+// let todoItems = await TodoRepository.getAllTodoItemsAsync(); // Assign value to object then Read
 
-todoItems.forEach((item) => ElementBuilder.createTodo(item.content, CURRENT_TODO.id) // Then Append & Display the Todos
-);
+// todoItems.forEach((item) => ElementBuilder.renderTodoItemElement(item.content,item.isCompleted, CURRENT_TODO.id) // Then Append & Display the Todos
+// );
+
+// ALT 2: Fetch all Todos from DB
+let todoItems = await TodoRepository.getAllTodoItemsAsync(); // Assign value to object then Read
+todoItems.forEach((item) => {
+	const todoItemElement = ElementBuilder.createTodoItemElement(item); // Then Append & Display the Todos
+	CURRENT_TODO.appendChild(todoItemElement);
+  });
 
 
 // Event Listeners & Initilization
+
 	// Create Todo Button for Current Todo Container
-CURRENT_TODO_BUTTON_ADD.addEventListener('click', () => {
-	const inputContent = CURRENT_TODO_INPUT.value;
-	const parentId = CURRENT_TODO.id;
-
+CURRENT_TODO_BUTTON_ADD.addEventListener('click', async() => {
 	// Create Todo-item & Append to Parent Div
-	ElementBuilder.createTodo(inputContent, parentId);
-
+	const todoItem = TodoItem.createTodoItem(CURRENT_TODO_INPUT.value, false);
+	const todoItemElement = ElementBuilder.createTodoItemElement(todoItem);
+	CURRENT_TODO.appendChild(todoItemElement);
+  
+	// Pass to Repo & Add to DB
+	await TodoRepository.addTodoItemAsync(todoItem);
+  
 	// Clear the Text Input Field
 	clearElementValue(CURRENT_TODO_INPUT);
-});
+    //displayAllTodoItems(); // Call Display Function for updating page
+  });
 
+  
 // Functions (Shorter functions for handling UI)
 function clearElementValue(element) {
 	element.value = '';
 }
+
+// Call Repo & Get all TodoItems from DB, then call ElementBuilder and render TodoItems on page
+function displayAllTodoItems() {
+	TodoRepository.getAllTodoItemsAsync().then((data) =>
+	  data.forEach((item) => {
+		const todoItemElement = ElementBuilder.createTodoItemElement(item);
+		CURRENT_TODO.appendChild(todoItemElement);
+	  })
+	);
+  }
+  
